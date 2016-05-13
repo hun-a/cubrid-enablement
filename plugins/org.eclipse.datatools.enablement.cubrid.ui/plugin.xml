@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension
+	      point="org.eclipse.datatools.connectivity.ui.driverPropertyEditor">
+	      <propertyEditor
+	      		customPropertyDescriptor="org.eclipse.datatools.connectivity.ui.PasswordTextPropertyDescriptor"
+	      		driverPropertyID="org.eclipse.datatools.connectivity.db.password"
+	      		driverTemplateID="org.eclipse.datatools.enablement.cubrid.9_3_6.driverTemplate"
+				id="org.eclipse.datatools.enablement.cubrid.9_3_6.driverTemplate.password">
+	      </propertyEditor>
+	</extension>
+	
+	<extension
+	      point="org.eclipse.datatools.connectivity.connectionProfile">
+	      <newWizard
+				class="org.eclipse.datatools.enablement.cubrid.internal.ui.connection.NewCUBRIDConnectionProfileWizard"
+	      		icon="icons/new_db_element.gif"
+				id="org.eclipse.datatools.enablement.cubrid.NewCUBRIDConnectionProfileWizard"
+				name="%profile.cubrid.wizard.title"
+				description="%profile.cubrid.wizard.description"
+				profile="org.eclipse.datatools.enablement.cubrid.connectionProfile"/>
+	</extension>
+	
+	<extension
+		point="org.eclipse.ui.propertyPages">
+		<page
+			class="org.eclipse.datatools.enablement.cubrid.internal.ui.connection.CUBRIDDBProfilePropertyPage"
+			id="org.eclipse.datatools.enablement.cubrid.profileProperties"
+			name="%profile.cubrid.properties"
+			objectClass="org.eclipse.datatools.connectivity.IConnectionProfile">
+			<filter
+				name="org.eclipse.datatools.profile.property.id"
+				value="org.eclipse.datatools.enablement.cubrid.connectionProfile"/>
+		</page>
+	</extension>
+	
+	
+	
+	<extension
+		point="org.eclipse.datatools.connectivity.ui.driverUIContributor">
+			<driverUIContributor
+				class="org.eclipse.datatools.enablement.cubrid.internal.ui.connection.drivers.CUBRIDOtherDriverUIContributor"
+				driverTemplateID="org.eclipse.datatools.enablement.cubrid.9_3_6.driverTemplate"
+				id="org.eclipse.datatools.enablement.cubrid.internal.ui.connection.drivers.9_3_6.CUBRIDOtherDriverUIContributor">
+			</driverUIContributor>
+	</extension>
+	
+</plugin>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension
+		point="org.eclipse.datatools.connectivity.sqm.core.databaseDefinition">
+		<definition
+			version="9.3.6.0002"
+			product="CUBRID"
+        	productDisplayString="%9.3_ProductString"
+        	versionDisplayString="%9.3_VersionString"
+        	file="runtime/vendors/CUBRID_9.3.6/CUBRID_9.3.6.xmi">
+		</definition>
+	</extension>
+</plugin>
